@@ -40,22 +40,22 @@ Clone the repo to your computer.
 Clone by the following command if you're using public key for github connection.
 
 ```
-git clone --recurse-submodules {github repo ssh link}
+git clone --recurse-submodules git@github.com:chtsai0105/compartive_genomics-snakemake.git
 ```
 
 Or clone by https link.
 
 ```
-git clone --recurse-submodules {github repo https link}
+git clone --recurse-submodules https://github.com/chtsai0105/compartive_genomics-snakemake.git
 ```
 
 Otherwise, clone the submodules as a second step by:
 ```
-cd metagenome-snakemake
+cd compartive_genomics-snakemake
 git submodule update --init
 ```
 
-Next, go to the directory by `cd metagenome-snakemake`. It should contains the following files:
+Next, go to the directory by `cd compartive_genomics-snakemake`. It should contains the following files:
 
 File                    |Description
 ------------------------|---------------------------------
@@ -75,16 +75,6 @@ You can edit the `config.yaml` to setup the path for data and metadata of the sa
 ## Define the samples
 
 You should properly defined your metadata, which is recorded in the `sample.csv`, before running the workflow. There are 2 columns in this csv table - **sample** and **fastq**. The column **sample** defined the sample name. You can change it to names which are more distinguishable instead of accession numbers. The column **fastq** defined the fastq file names you placed in the folder `data/fastq`. Please make sure they are identical to the fastq files you have otherwise the workflow may have trouble to input the files. Please also confirm that the names in each column are unique.
-
-## Setup the slurm profile (Optional)
-
-If you want to run the workflow on the cluster, you have to setup the profile first. Since the `slurm` profile have been cloned as a submodule, you can simply symlink the **slurm** folder to your snakemake config folder by:
-
-```
-ln -s `realpath slurm` $HOME/.config/snakemake
-```
-
-Please refer to [snakemake profile for slurm](https://github.com/chtsai0105/snakemake_profile-slurm) for additional info.
 
 ## Run the workflow
 
