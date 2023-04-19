@@ -1,0 +1,15 @@
+*
+.*
+
+!.gitignore
+!README.md
+!snakefile
+
+!data/.gitkeep
+!envs
+!envs/*
+!rules
+!rules/*
+!wrappers
+!wrappers/*
+!wrappers/**/wrapper.py
