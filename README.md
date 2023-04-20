@@ -11,9 +11,10 @@
 
 # Snakemake workflow for comparitive genomics
 <img align="right" width="120" height="120" src="https://avatars.githubusercontent.com/u/33450111?s=200&v=4">
-{Add some intro here}
+The snakemake workflow takes whole genome sequencing data, including illumina and Nanopore reads, to assemble to draft genomes.
+A compartive genomics analysis would be applied on all these draft genomes.
 
-{Add some intro here}
+Currently the workflow is still in the initial stage. Please do not use the workflow on publication.
 
 <br>
 
