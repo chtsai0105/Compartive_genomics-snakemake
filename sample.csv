@@ -1,0 +1,4 @@
+sample,R1,R2,interleaved
+Scer,L001_R1.fastq,L001_R2.fastq,
+pombe,L002_R1.fastq,L002_R2.fastq,
+delbrueckii,L003_R1.fastq,L003_R2.fastq,

@@ -66,6 +66,7 @@ File                    |Description
 `data/`                 |The folder for the data and the workflow outputs.
 `envs/`                 |The folder that contains the yaml config for conda environments.
 `rules/`                |The folder that contains the rules/submodules of the workflow.
+`wrappers/`             |The folder that contains wrappers.
 `slurm/`                |The folder that contains the slurm profile for stajichlab partition@UCR hpcc.
 
 ## Define the path

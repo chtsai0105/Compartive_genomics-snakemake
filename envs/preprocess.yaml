@@ -1,0 +1,8 @@
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - fastqc
+  - bbmap>=38.93
+  - fastp>=0.23.2
+  - bfc

@@ -1,0 +1,17 @@
+Metadata: sample.csv
+
+raw_data:
+  fastq: data/fastq
+
+fastqc:
+  run: True
+  output: data/fastqc
+
+trimming:
+  run: True
+
+assembly:
+  run: True
+  output: data/spades
+  min_contig_length: 3000
+  filtered_contigs: data/filtered_contigs
