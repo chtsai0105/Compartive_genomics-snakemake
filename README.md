@@ -7,7 +7,7 @@
 [issues-shield]: https://img.shields.io/github/issues/chtsai0105/smk-compartive_genomics
 [issues-url]: https://github.com/chtsai0105/smk-compartive_genomics/issues
 [license-shield]: https://img.shields.io/github/license/chtsai0105/smk-compartive_genomics?label=license
-[license-url]: https://github.com/chtsai0105/smk-compartive_genomics/blob/master/LICENSE.md
+[license-url]: https://github.com/chtsai0105/smk-compartive_genomics/blob/master/LICENSE
 
 # Snakemake workflow for comparitive genomics
 <img align="right" width="120" height="120" src="https://avatars.githubusercontent.com/u/33450111?s=200&v=4">
@@ -15,6 +15,10 @@ The snakemake workflow takes whole genome sequencing data, including illumina an
 A compartive genomics analysis would be applied on all these draft genomes.
 
 Currently the workflow is still in the initial stage. Please do not use the workflow on publication.
+
+The figure below shows the steps for this workflow.
+
+![workflow](images/rulegraph.png)
 
 <br>
 
@@ -88,18 +92,21 @@ cd smk-compartive_genomics
 git submodule update --init
 ```
 
-Next, go to the directory by `cd smk-compartive_genomics`. It should contains the following files:
+Next, go to the directory by `cd smk-compartive_genomics`. The entire folder structure and its details are listed below:
 
-File    |Description
--|-
-[snakefile](snakefile)  |The workflow entry. Define the targets for the workflow.
-[config.yaml](config.yaml)  |Define the path for data and metadata.
-[sample.csv](sample.csv)    |The metadata for samples. Define the names of the samples and the fastq files.
-[run_snakemake.bash](run_snakemake.bash)    |The bash script for running the workflow.
-[data/](data)   |The folder for the data and the workflow outputs.
-[envs/](envs)   |The folder that contains the yaml config for conda environments.
-[rules/](rules) |The folder that contains the rules/submodules of the workflow.
-[slurm/](https://github.com/chtsai0105/snakemake_profile-slurm/tree/master) |The folder that contains the slurm profile for stajichlab partition@UCR hpcc.
+    .
+    ├── config/
+    │   ├── config.yaml             # Define the path for data and metadata.
+    │   ├── sample.csv              # The metadata for samples. Define the names of the samples and the fastq files.
+    ├── workflow/
+    │   ├── rules/                  # The folder that contains the rules/submodules of the workflow.   
+    │   ├── envs/                   # The folder that contains the yaml config for conda environments.
+    │   ├── wrappers/               # The folder that contains the self-defined wrappers.
+    │   ├── snakefile               # The workflow entrypoint. Define the targets for the workflow.
+    ├── data/                       # The folder for the data and the workflow outputs.
+    │   ├── fastq/                  # The folder that the initial fastq files should be placed.
+    ├── slurm/                      # The folder that contains the slurm profile for stajichlab partition@UCR hpcc.
+    └── run_snakemake.bash          # The bash script for running the workflow.
 
 <br>
 

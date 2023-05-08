@@ -1,4 +1,4 @@
-Metadata: sample.csv
+Metadata: config/sample.csv
 
 raw_data:
   fastq: data/fastq

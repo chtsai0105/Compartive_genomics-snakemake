@@ -19,7 +19,7 @@ rule spades:
     conda:
         "envs/assembler.yaml"
     wrapper:
-        "file:wrappers/metaspades"
+        "file:workflow/wrappers/metaspades"
 
 rule contig_link:
     input:
