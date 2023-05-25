@@ -41,7 +41,9 @@ rule fastp:
     input:
         lambda w: data.filepath_generator(w.sample, config['raw_data']['fastq'])
     output:
-        "{dir}/trimmed/{{sample}}.fastq.gz".format(dir=config['raw_data']['fastq'])
+        fastq = "{dir}/trimmed/{{sample}}.fastq.gz".format(dir=config['raw_data']['fastq']),
+        html = "{dir}/trimmed/{{sample}}.html".format(dir=config['raw_data']['fastq']),
+        json = "{dir}/trimmed/{{sample}}.json".format(dir=config['raw_data']['fastq']),
     threads: 4
     resources:
         mem_mb=lambda w, input, attempt: min(max((input.size // 1000000) * 4 * (2 + attempt), 4000), 16000)
@@ -49,7 +51,8 @@ rule fastp:
         "envs/preprocess.yaml"
     shell:
         """
-        fastp -i {input} -w {threads} --interleaved_in --stdout --length_required 75 | gzip -1 > {output}
+        fastp -i {input} -w {threads} --interleaved_in --html {output.html} --json {output.json} \
+        --stdout --length_required 75 | gzip -1 > {output}
         """
 
 use rule fastqc_pre as fastqc_post with:
